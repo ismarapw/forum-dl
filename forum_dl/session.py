@@ -28,6 +28,7 @@ class SessionOptions(BaseModel):
     warc_output: str
     user_agent: str
     get_urls: bool
+    time_sleep: int
 
 
 class Session:
@@ -83,6 +84,8 @@ class Session:
             should_retry=should_retry,
             **kwargs,
         )
+
+        time.sleep(self._options.time_sleep)
         response.raise_for_status()
 
         return response

@@ -42,6 +42,7 @@ def main():
                 warc_output=warc_output,
                 user_agent=args.user_agent,
                 get_urls=args.get_urls,
+                time_sleep=args.time_sleep
             ),
             extractor_options=ExtractorOptions(
                 path=False,
